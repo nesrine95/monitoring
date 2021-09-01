@@ -1,1 +1,7 @@
+GET http://localhost:3000/
+###
+
 GET http://localhost:3000/paths/directories
+###
+GET http://localhost:3000/paths/directories/C:\\Users\\nesrine\\Desktop\\New folder\\New folder (3)\\New folder (2)
+###

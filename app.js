@@ -1,18 +1,27 @@
 "use strict "
-const express=require("express");
+
+const express = require("express");
+const paths = require("./routes/paths");
+
 const app = express();
-const port = process.env.port||3000;
+const port = process.env.port || 8080;
+
+
 app.use(express.json());
-const paths = require("./routes/paths") ;
+
 app.use("/paths", paths);
 
 app.get("/", (req, res) => {
-res.send("hello root ");
+ 
+  res.send("/"); 
 });
-
-app.listen(port,err=>{
-    if(err){
-        return console.log("error",err);
-    }
-    console.log(`Listening on port ${port}`)
+app.post("/post", (req, res) => {
+  console.log("Connected to React");
+  res.redirect("/");
+});
+app.listen(port, err => {
+  if (err) {
+    return console.log("error", err);
+  }
+  console.log(`Listening on port ${port}`)  
 })
